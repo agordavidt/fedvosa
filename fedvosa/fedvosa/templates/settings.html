@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Settings </title>
 
-    <link rel="stylesheet" href="mystyle.css">
+    <link rel="stylesheet" href="{% static 'mystyle.css' %}">
     
 
 </head>
@@ -21,7 +21,7 @@
     <!---Navbar-->
     <input type="checkbox" id="check">
     <nav class="nav_i">
-        <div class="icon" style="width: 40px; height: 40px"><img src="images/logo-2.png" alt=""></div>
+        <div class="icon" style="width: 40px; height: 40px"><img src="{% static 'images/logo-2.png' %}" alt=""></div>
         <!-- <div class="search_box">
             <input type="search" placeholder="search member">
             <span class="fa fa-search"></span>

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>FEDVOSA | About Us </title>
 
-    <link rel="stylesheet" href="mystyle.css">
+    <link rel="stylesheet" href="{% static 'mystyle.css' %}">
     
 
 </head>
@@ -20,7 +20,7 @@
     <!---Navbar-->
     <nav class="navbar">
         <div class="container flex">
-            <div class="logo" style="width: 40px; height: 40px"><img src="images/logo.png" alt=""></div>
+            <div class="logo" style="width: 40px; height: 40px"><img src="images/logo.png{% static 'images/fed1.jpg' %}" alt=""></div>
         <ul class="nav-itmes">
             <li><a href="about.html">About</a></li>
             <li><a href="faq.html">FAQs</a></li>
@@ -52,7 +52,7 @@
                     Over the years, a lot of positive developments have been recorded in the management and administration of the Association. </p>
 
             </div>
-            <img src="images/fed1.jpg" alt="#">
+            <img src="{% static 'images/fed1.jpg' %}" alt="#">
             
         </div>
     </section>
@@ -96,7 +96,7 @@
            
           <div class="swiper-slide slide">
              <div class="image">
-                <img src="images/president.png" alt="">
+                <img src="{% static 'images/president.png' %}" alt="">
                 <div class="share">
                     <a href="#"><i class="fab fa-whatsapp fa-1x"></i></a>
                     <a href="#"><i class="fab fa-facebook fa-1x"></i></a>
@@ -111,7 +111,7 @@
  
           <div class="swiper-slide slide">
              <div class="image">
-                <img src="images/vice-press.png" alt="">
+                <img src="{% static 'images/vice-press.png' %}" alt="">
                 <div class="share">
                     <a href="#"><i class="fab fa-whatsapp fa-1x"></i></a>
                     <a href="#"><i class="fab fa-facebook fa-1x"></i></a>
@@ -126,7 +126,7 @@
  
           <div class="swiper-slide slide">
              <div class="image">
-                <img src="images/secgen.png" alt="">
+                <img src="{% static 'images/secgen.png' %}" alt="">
                 <div class="share">
                     <a href="#"><i class="fab fa-whatsapp fa-1x"></i></a>
                     <a href="#"><i class="fab fa-facebook fa-1x"></i></a>
@@ -141,7 +141,7 @@
  
           <div class="swiper-slide slide">
              <div class="image">
-                <img src="images/assec.png" alt="">
+                <img src="{% static 'images/assec.png' %}" alt="">
                 <div class="share">
                     <a href="#"><i class="fab fa-whatsapp fa-1x"></i></a>
                     <a href="#"><i class="fab fa-facebook fa-1x"></i></a>
@@ -156,7 +156,7 @@
  
           <div class="swiper-slide slide">
              <div class="image">
-                <img src="images/fin-sec.png" alt="">
+                <img src="{% static 'images/fin-sec.png' %}" alt="">
                 <div class="share">
                     <a href="#"><i class="fab fa-whatsapp fa-1x"></i></a>
                     <a href="#"><i class="fab fa-facebook fa-1x"></i></a>
@@ -171,7 +171,7 @@
 
           <div class="swiper-slide slide">
             <div class="image">
-               <img src="images/tressurer.png" alt="">
+               <img src="{% static 'images/tressurer.png' %}" alt="">
                <div class="share">
                    <a href="#"><i class="fab fa-whatsapp fa-1x"></i></a>
                    <a href="#"><i class="fab fa-facebook fa-1x"></i></a>
@@ -186,7 +186,7 @@
 
          <div class="swiper-slide slide">
             <div class="image">
-               <img src="images/diros.png" alt="">
+               <img src="{% static 'images/diros.png' %}" alt="">
                <div class="share">
                    <a href="#"><i class="fab fa-whatsapp fa-1x"></i></a>
                    <a href="#"><i class="fab fa-facebook fa-1x"></i></a>
@@ -201,7 +201,7 @@
 
          <div class="swiper-slide slide">
             <div class="image">
-               <img src="images/pubsec.png" >
+               <img src="{% static 'images/pubsec.png' %}" >
                <div class="share">
                    <a href="#"><i class="fab fa-whatsapp fa-1x"></i></a>
                    <a href="#"><i class="fab fa-facebook fa-1x"></i></a>
@@ -215,7 +215,7 @@
          </div>
          <div class="swiper-slide slide">
             <div class="image">
-               <img src="images/provost.png">
+               <img src="{% static 'images/provost.png' %}">
                <div class="share">
                    <a href="#"><i class="fab fa-whatsapp fa-1x"></i></a>
                    <a href="#"><i class="fab fa-facebook fa-1x"></i></a>
