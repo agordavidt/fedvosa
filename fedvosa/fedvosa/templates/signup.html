@@ -31,7 +31,17 @@
     <section class="sign up1">
         <div class="container grid up">
             <div class="sign-form card">
-                <h1>Create an Account</h1>
+                <h2>Create an Account</h2>
+                <div>
+                    <style>
+                        h5{
+                            color: red;
+                        }
+                    </style>
+                    {% for message in messages %}
+                    <h5>{{message}}</h5>
+                    {% endfor %}
+                </div>
                 <form action="" method="POST">
                     {% csrf_token %}
                     <div class="form-control">

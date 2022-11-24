@@ -1,5 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User, auth
+from django.contrib import messages
 from django.http import HttpResponse
+from .models import Profile
 
 # Create your views here.
 def index(request):
@@ -38,6 +41,7 @@ def signup(request):
                 new_profile = Profile.objects.create(user=user_model, id_user=user_model.id)
                 new_profile.save()
                 return redirect('settings')
+
                 #remove the entered pin from the pin_lists
                 pin_lists.remove(pin)
         else:
