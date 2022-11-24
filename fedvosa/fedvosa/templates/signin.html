@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>FEDVOSA | Signin </title>
+    <title>Signin - FEDVOSA </title>
 
     <link rel="stylesheet" href="{% static 'mystyle.css' %}">
     
@@ -20,9 +20,9 @@
         <div class="container flex">
             <div class="logo" style="width: 40px; height: 40px"><img src="{% static 'images/logo.png' %}" alt=""></div>
         <ul class="nav-itmes">
-            <li><a href="about.html">About</a></li>
-            <li><a href="events.html">Event</a></li>
-            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/events">Event</a></li>
+            <li><a href="/faq">FAQs</a></li>
         </ul>
         </div>        
     </nav>
@@ -37,11 +37,23 @@
                      eos commodi porro qui, et earum eius minus soluta similique. In vero quo dolorem 
                      fugiat quia, porro voluptatum provident nam eligendi odio doloremque quaerat, incidunt
                       possimus modi.</p>
-                <a href="/about" class="btn btn-outline">signup</a>
+                <a href="/signup" class="btn btn-outline">signup</a>
             </div>
             <div class="sign-form card">
-                <h1>Login</h1>
-                <form action="#" method="POST">
+                <h2>Login</h2>
+                <div>
+                    <style>
+                        h5{
+                            color: red;
+                        }
+                    </style>
+                    {% for message in messages %}
+                    <h5>{{message}}</h5>
+                    {% endfor %}
+                </div>
+
+                <form action="" method="POST">
+                    {% csrf_token %}
                     <div class="form-control">
                         <input type="text" name="username" placeholder="Username" required>
                     </div>
@@ -52,6 +64,7 @@
                     <p class="text-base"> Not registered? <a href="/signup" class=""> Create an account </a></p>
 
                 </form>
+                
             </div>            
         </div>
     </section>
