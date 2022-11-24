@@ -17,67 +17,69 @@
 
 </head>
 <body class="bg-light">
-    <!---Navbar-->
-    <!---Navbar-->
-    <input type="checkbox" id="check">
-    <nav class="nav_i">
-        <div class="icon" style="width: 40px; height: 40px"><img src="{% static 'images/logo-2.png' %}" alt=""></div>
-        <!-- <div class="search_box">
-            <input type="search" placeholder="search member">
-            <span class="fa fa-search"></span>
-        </div> -->
-        <ol>
-            <li><a href="index.html">Home</a></li>
-            <!-- <li><a href="about.html">About</a></li>            
-            <li><a href="faq.html">FAQs</a></li>
-            <li><a href="contact.html">Contact</a></li> -->
-            <div class="btn_2 li_main"><img src="images/blank-profile-picture.png">
-                <div class="menu">
-                    <ul>
-                        <li><a href="settings.html">Settings</a></li>
-                        <li><a href="signin.html"> Logout</a></li>
-                    </ul>
-                </div>   
-            
-            </div>
-        </ol>
-        <label for="check" class="bar">
-            <span class="fa fa-bars" id="bars"></span>
-            <span class="fa fa-times" id="times"></span>
-        </label>
-    </nav>
+   <!---Navbar-->
+   <input type="checkbox" id="check">
+   <nav class="nav_i">
+       <div class="icon" style="width: 40px; height: 40px"><img src="{% static 'images/logo-2.png' %}" alt=""></div>
+       <div class="search_box">
+           <input type="search" placeholder="search member">
+           <span class="fa fa-search"></span>
+       </div>
+       <ol>
+           <li><a href="/">Home</a></li>
+           <li><a href="/about">About</a></li>            
+           <li><a href="/faq">FAQs</a></li>
+           <li><a href="/contact">Contact</a></li>
+           <div class="btn_2 li_main"><img src="{% static 'images/blank-profile-picture.png' %}">
+               <div class="menu">
+                   <ul>
+                       <li><a href="/settings">Settings</a></li>
+                       <li><a href="logout"> Logout</a></li>
+                   </ul>
+               </div>
+           
+           
+           </div>
+       </ol>
+       <label for="check" class="bar">
+           <span class="fa fa-bars" id="bars"></span>
+           <span class="fa fa-times" id="times"></span>
+       </label>
+   </nav>
+
+  
 
 
     <section class="settings">
         <h2>Member information</h2>
-        <form action="">
+
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
             <div class="input_field">
                 <label for="">First Name</label>
-                <input type="text" class="input">
+                <input type="text" class="input" name="firstname" value="{{user_profile.firstname}}">
             </div>
             <div class="input_field">
                 <label for="">Last Name</label>
-                <input type="text" class="input">
+                <input type="text" class="input" name="lastname" value="{{user_profile.lastname}}">
             </div>
             <div class="input_field">
                 <label for=""> Profile Image</label>
                 <div>
                     <img style = "width: 100px; height: 100px; " src="{{user_profile.profileimg.url}}" />
-                <input type="file" name="image" value="" class="shadow-none bg-gray-100">
+                <input type="file" name="image" >
                 </div>
                 
             </div>
             <div class="input_field">
-                <label for="gender">Gender</label>
-                
+                <label for="gender">Gender</label>                
                     <input type="radio" name="gender" value="male">Male
-                    <input type="radio" name="gender" value="female">Female
-                                
+                    <input type="radio" name="gender" value="female">Female                                
             </div>
             <div class="input_field">
                 <label for="">Graduation Set</label>
                 <div class="custom_select">
-                    <select name="gradset" id="gradset" class="shadow-none bg-gray-100">
+                    <select name="gradset" id="gradset">
                         <option value="0">SET 2021</option>
                         <option value="1">SET 2020</option>
                         <option value="2">SET 2019</option>
@@ -106,7 +108,7 @@
             <div class="input_field">
                 <label for="">School House</label>
                 <div class="custom_select">
-                    <select name="house" id="house" class="shadow-none bg-gray-100">
+                    <select name="house" id="house">
                         <option value="mande">Mande House</option>
                         <option value="kuma">Kuma House</option>
                         <option value="abu">Abugh House</option>
@@ -116,11 +118,11 @@
             </div>
             <div class="input_field">
                 <label for="">About Me</label>
-                <textarea name="" id="" class="textarea"></textarea>
+                <textarea name="bio" id="about" class="textarea">{{user_profile.bio}}</textarea>
             </div>
             <div class="input_field">
                 <label for="">Occupation</label>
-                <input type="text" class="input">
+                <input type="text" class="input" name="occupation" value="{{user_profile.occupation}}">
             </div>
             <div class="input_field">
                 <label for="phone">Phone Number</label>
@@ -129,7 +131,7 @@
             <div class="input_field">
                 <label for="">Marital Status</label>
                 <div class="custom_select">
-                    <select name="relationship" id="relationship" class="shadow-none bg-gray-100">
+                    <select name="relationship" id="relationship" >
                         <option name="single" value="single">Single</option>
                         <option name="married" value="married">Married</option>                                
                     </select>
@@ -137,7 +139,7 @@
             </div>
             <div class="input_field">
                 <label for="">Location</label>
-                <input type="text" class="input">
+                <input type="text" class="input" name="location" value="{{user_profile.location}}">
             </div>
             <div class="btn_group">
                 <button class="btn4 btn-4"> <a href="/">Cancel</a> </button>

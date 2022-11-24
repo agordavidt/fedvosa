@@ -10,6 +10,62 @@ from .models import Profile
 def index(request):
     return render(request, 'index.html')
 
+
+@login_required(login_url='signin')
+def settings(request):
+    user_profile = Profile.objects.get(user=request.user)
+
+    if request.method == 'POST':
+        
+        if request.FILES.get('image') == None:
+            image = user_profile.profileimg
+            firstname = request.POST['firstname']
+            lastname = request.POST['lastname']
+            bio = request.POST['bio']
+            gradset = request.POST['gradset']
+            house = request.POST['house']
+            location = request.POST['location']
+            occupation = request.POST['occupation']
+            relationship = request.POST['relationship']
+
+            user_profile.profileimg = image
+            user_profile.firstname = firstname
+            user_profile.lastname = lastname
+            user_profile.bio = bio
+            user_profile.gradset = gradset
+            user_profile.house = house
+            user_profile.location = location
+            user_profile.occupation = occupation
+            user_profile.relationship = relationship
+
+
+            user_profile.save()
+        if request.FILES.get('image') != None:
+            image = request.FILES.get('image')
+            firstname = request.POST['firstname']
+            lastname = request.POST['lastname']
+            bio = request.POST['bio']
+            gradset = request.POST['gradset']
+            house = request.POST['house']
+            location = request.POST['location']
+            occupation = request.POST['occupation']
+            relationship = request.POST['relationship']
+
+            user_profile.profileimg = image
+            user_profile.firstname = firstname
+            user_profile.lastname = lastname
+            user_profile.bio = bio
+            user_profile.gradset = gradset
+            user_profile.house = house
+            user_profile.location = location
+            user_profile.occupation = occupation
+            user_profile.relationship = relationship
+            user_profile.save()
+        
+        return redirect('settings')
+    return render(request, 'settings.html', {'user_profile': user_profile})
+
+
 def signup(request):
     pin_lists = ['111a', '222b', '333c', '444d', '555e', '666f']
 
