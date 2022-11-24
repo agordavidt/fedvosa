@@ -30,7 +30,7 @@
            <li><a href="/about">About</a></li>            
            <li><a href="/faq">FAQs</a></li>
            <li><a href="/contact">Contact</a></li>
-           <div class="btn_2 li_main"><img src="{% static 'images/blank-profile-picture.png' %}">
+           <div class="btn_2 li_main"><img src="{{user_profile.profileimg.url}}">
                <div class="menu">
                    <ul>
                        <li><a href="/settings">Settings</a></li>
@@ -51,7 +51,7 @@
 
 
     <section class="settings">
-        <h2>Member information</h2>
+        <h2> Account Settings for <b> {{user_profile.user.username}}</b></h2><hr><br>
 
         <form action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
@@ -67,7 +67,7 @@
                 <label for=""> Profile Image</label>
                 <div>
                     <img style = "width: 100px; height: 100px; " src="{{user_profile.profileimg.url}}" />
-                <input type="file" name="image" >
+                    <input type="file" name="image" >
                 </div>
                 
             </div>
@@ -126,7 +126,7 @@
             </div>
             <div class="input_field">
                 <label for="phone">Phone Number</label>
-                <input type="tel" name="phone" placeholder="080-0000-0000" value="{{user_profile.phone}}" class="shadow-none bg-gray-100">
+                <input type="text" name="phone" placeholder="080-0000-0000" value="{{user_profile.phone}}">
             </div>
             <div class="input_field">
                 <label for="">Marital Status</label>

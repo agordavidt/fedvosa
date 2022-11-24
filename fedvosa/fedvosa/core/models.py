@@ -10,7 +10,7 @@ class Profile(models.Model):
     firstname = models.CharField(max_length=100, blank=True)
     lastname = models.CharField(max_length=100, blank=True)
     bio = models.TextField(blank=True)
-    phone_number = models.CharField(max_length=12)
+    phone = models.CharField(max_length=12)
     gradset = models.CharField(max_length=50, choices = (
         ('0', 'SET 2021'), ('1', 'SET 2020'),  ('2', 'SET 2019'), ('3', 'SET 2018'),
          ('4', 'SET 2017'), ('5', 'SET 2016'),  ('6', 'SET 2015'), ('7', 'SET 2014'),

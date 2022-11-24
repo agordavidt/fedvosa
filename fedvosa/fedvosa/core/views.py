@@ -26,6 +26,7 @@ def settings(request):
             house = request.POST['house']
             location = request.POST['location']
             occupation = request.POST['occupation']
+            phone = request.POST['phone']
             relationship = request.POST['relationship']
 
             user_profile.profileimg = image
@@ -36,10 +37,10 @@ def settings(request):
             user_profile.house = house
             user_profile.location = location
             user_profile.occupation = occupation
+            user_profile.phone = phone
             user_profile.relationship = relationship
-
-
             user_profile.save()
+
         if request.FILES.get('image') != None:
             image = request.FILES.get('image')
             firstname = request.POST['firstname']
@@ -49,6 +50,7 @@ def settings(request):
             house = request.POST['house']
             location = request.POST['location']
             occupation = request.POST['occupation']
+            phone = request.POST['phone']
             relationship = request.POST['relationship']
 
             user_profile.profileimg = image
@@ -59,6 +61,7 @@ def settings(request):
             user_profile.house = house
             user_profile.location = location
             user_profile.occupation = occupation
+            user_profile.phone = phone
             user_profile.relationship = relationship
             user_profile.save()
         
