@@ -20,9 +20,9 @@
         <div class="container flex">
             <div class="logo" style="width: 40px; height: 40px"><img src="{% static 'images/logo.png' %}" alt=""></div>
         <ul class="nav-itmes">
-            <li><a href="about.html">About</a></li>            
-            <li><a href="faq.html">FAQs</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="/about">About</a></li>            
+            <li><a href="/faq">FAQs</a></li>
+            <li><a href="/contact">Contact</a></li>
         </ul>
         </div>        
     </nav>
@@ -32,7 +32,8 @@
         <div class="container grid up">
             <div class="sign-form card">
                 <h1>Create an Account</h1>
-                <form action="#" method="POST">
+                <form action="" method="POST">
+                    {% csrf_token %}
                     <div class="form-control">
                         <input type="text" name="username" placeholder="Username" required>
                     </div>
@@ -43,7 +44,7 @@
                         <input type="password" name="password" placeholder="Enter Password" required>
                     </div>
                     <div class="form-control">
-                        <input type="password" name="password2" placeholder="Enter PIN" required>
+                        <input type="password" name="pin" placeholder="Enter PIN" required>
                     </div>
                     <button type="submit" value="Send" class="btn btn-primary">Sign Up</button>
                     <p class="text-base"> Do you have an account? <a href="/signup" style="color: #003347;"> Login </a></p>
@@ -52,7 +53,7 @@
             <div class="sign-text">
                 <h1>FGC Vandeikya Old Students Associaton</h1>
                 <p>Lores, officiis? Quasi quos veniam ipsa, numquam iusto eos commodi porro qui, et earum eius minus soluta similique. In vero quo dolorem fugiat quia, porro voluptatum provident nam eligendi odio doloremque quaerat, incidunt possimus modi.</p>
-                <a href="pay.html" class="btn btn-outline">Make Payment</a>
+                <a href="/pay" class="btn btn-outline">Make Payment</a>
             </div>            
         </div>
 
