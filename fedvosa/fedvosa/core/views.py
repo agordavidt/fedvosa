@@ -64,11 +64,19 @@ def signin(request):
             auth.login(request, user)
             return redirect('/')
         else:
-            messages.info(request, 'Credentials Invalid')
+            messages.info(request, 'credentials does not correspond to a registered member.')
             return redirect('signin')
 
     else:
         return render(request, 'signin.html')
+
+
+
+def logout(request):
+    auth.logout(request)
+    return redirect('signin')
+
+
 
 # Additional contents
 def faq(request):
