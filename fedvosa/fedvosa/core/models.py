@@ -14,16 +14,16 @@ class Profile(models.Model):
     bio = models.TextField(blank=True)
     phone = models.CharField(max_length=12)
     gradset = models.CharField(max_length=50, choices = (
-        ('0', 'SET 2021'), ('1', 'SET 2020'),  ('2', 'SET 2019'), ('3', 'SET 2018'),
-         ('4', 'SET 2017'), ('5', 'SET 2016'),  ('6', 'SET 2015'), ('7', 'SET 2014'),
-          ('8', 'SET 2013'), ('9', 'SET 2012'),  ('10', 'SET 2011'), ('11', 'SET 2010'),
-         ('12', 'SET 2009'), ('13', 'SET 2008'),  ('14', 'SET 2007'), ('15', 'SET 2006'),
-          ('16', 'SET 2005'), ('17', 'SET 2004'),  ('18', 'SET 2003'), ('19', 'SET 2002'),
-          ('20', 'SET 2001')
+        ('SET 2021', 'SET 2021'), ('SET 2020', 'SET 2020'),  ('SET 2019', 'SET 2019'), ('SET 2018', 'SET 2018'),
+         ('SET 2017', 'SET 2017'), ('SET 2016', 'SET 2016'),  ('SET 2015', 'SET 2015'), ('SET 2014', 'SET 2014'),
+          ('SET 2013', 'SET 2013'), ('SET 2012', 'SET 2012'),  ('SET 2011', 'SET 2011'), ('SET 2010', 'SET 2010'),
+         ('SET 2009', 'SET 2009'), ('SET 2008', 'SET 2008'),  ('SET 2007', 'SET 2007'), ('SET 2006', 'SET 2006'),
+          ('SET 2005', 'SET 2005'), ('SET 2004', 'SET 2004'),  ('SET 2003', 'SET 2003'), ('SET 2002', 'SET 2002'),
+          ('SET 2001', 'SET 2001')
     ), blank=True)
     house = models.CharField(max_length=50, choices = (
-        ('mande', 'Mande House'), ('abugh', 'Abu House'),
-        ('kuma', 'Kuma House'), ('pine', 'Pine House')
+        ('Mande House', 'Mande House'), ('Abugh House', 'Abugh House'),
+        ('Kuma House', 'Kuma House'), ('Pine House', 'Pine House')
     ), blank=True)
     profileimg = models.ImageField(upload_to='profile_images', default='blank-profile-picture.png')
     location = models.CharField(max_length=100, blank=True)

@@ -563,7 +563,10 @@ input[type="checkbox"]{
         color: #0c44a4;
         font-weight: bold;
     }
-    .action_view {
+    .member-row a {
+
+    }
+     .action_view {
         border: none;
         outline: none;
         border-radius: 40px;
@@ -573,6 +576,7 @@ input[type="checkbox"]{
         width: 60px;
         box-shadow: 2px 2px 10px rgba(12, 68, 144, 0.5);
         font-weight: bold;
+        font-size: 14px;
     }
     .action_view:hover{
         background-color: var(--light-color);

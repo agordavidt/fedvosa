@@ -19,10 +19,12 @@
     <input type="checkbox" id="check">
     <nav class="nav_i">
         <div class="icon" style="width: 40px; height: 40px"><img src="{% static 'images/logo-2.png' %}" alt=""></div>
+        <form action="">
         <div class="search_box">
-            <input type="search" placeholder="search member">
+            <input type="search" placeholder="">
             <span class="fa fa-search"></span>
         </div>
+    </form>
         <ol>
             <li><a href="/">Home</a></li>
             <li><a href="/about">About</a></li>            
@@ -75,7 +77,7 @@
                     <!--to add overlay: text that displays on the image, create div immidately after the img-->
                     <div class="overlay"></div>
                     <div class="act-desc">
-                    <p>the president and ....</p>
+                    <p> Mr President also acknowledged the efforts of the Principal, St Peters Secondary School Vandeikya. Rev. Fr. Linus Huabo, who stood by FGC Vandeikya during the time of this ugly incidence.</p>
                     </div>
                    </div>
                 <p class="lead">The National President, FGC Vandeikya Old Students Association (FEDVOSA) Mr Agor Sesugh earlier today, was at FGC Vandeikya for an eye seeing and evaluation of the level of damages caused by fire yesterday. On Mr President's visit, were some members of his EXCOs. The national president was received by the Vice Principal, at FGC Vandeikya.
@@ -92,7 +94,7 @@
                     <!--to add overlay: text that displays on the image, create div immidately after the img-->
                     <div class="overlay"></div>
                     <div class="act-desc">
-                    <p>write something here...</p>
+                    <p> The proposed students center is to house a tuck shop and sitting area, where students can buy and comfortably take their light refreshment The estimated cost of the project is Six million Naira (N6,000,000) only.</p>
                     </div>
                    </div>
                 <p>Greatest FEDVOSITES
@@ -159,10 +161,12 @@
                     <div class="find-members-container">
                         <div class="find-members-header">
                             <div class="heading">FEDVOSA Members</div>
+                            <form action="">
                             <div class="search">
                                 <i class="fa fa-search"></i>
                                 <input type="text" placeholder="Enter a name">
                             </div>
+                        </form>
                         </div>
                         <div class="find-members-body">
                             <div class="member-row">
@@ -172,13 +176,14 @@
                                 </div>
                                 <button class="action_view">View</button>
                             </div>
+                            
                             {% for suggestion in suggestions_username_profile_list %}
                             <div class="member-row">
                                 <div class="member-info">
                                     <img src="{{suggestion.profileimg.url}}" alt="">
                                     <span>{{suggestion.user}}</span>
                                 </div>
-                                <a href="/profile/{{suggestion.user}}" class="action_view">View</a>
+                                <button class="action_view"><a href="/profile/{{suggestion.user}}" >View</a></button>
                             </div>
                             {% endfor %}
                         </div>
