@@ -520,11 +520,14 @@ input[type="checkbox"]{
     .find-members-header .search {
         position: relative;
     }
-    .find-members-header .search i {
+    .find-members-header .search button {
         position: absolute;
         width: 20px;
         top: 15px;
         left: 40px;
+        background: transparent;
+        outline: none;
+        border: none;
     }
     .find-members-header .search input{
         border: none;

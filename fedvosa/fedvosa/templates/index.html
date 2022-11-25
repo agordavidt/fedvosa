@@ -161,10 +161,12 @@
                     <div class="find-members-container">
                         <div class="find-members-header">
                             <div class="heading">FEDVOSA Members</div>
-                            <form action="">
+                            <form action="/search" method="POST">
+                                {% csrf_token %}
+                                
                             <div class="search">
-                                <i class="fa fa-search"></i>
-                                <input type="text" placeholder="Enter a name">
+                                <button type="submit" style="margin: 0; padding: 0;"><i class="fa fa-search"></i></button>
+                                <input type="text" name="username" placeholder="Search for Member">
                             </div>
                         </form>
                         </div>
