@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>FEDVOSA | Member Profile </title>
+    <title>{{user_profile.user.username}} - Profile  </title>
 
     <link rel="stylesheet" href="{% static 'mystyle.css' %}">
     
@@ -53,52 +53,51 @@
     
     <div class="profile-box">
         <div class="profiles-img">
-            <img src="images/president.png">
-            <h1>Chivir Nongo</h1>
+            <img src="{{user_profile.profileimg.url}}">
+            <h1>{{user_profile.firstname}} {{user_profile.lastname}}</h1>
         </div>
         <div class="profiles">            
             <div class="profiles-desc">
                 <div class="profiles-icon"><i class="fas fa-user fa-1x"></i></div>
                 <div class="profiles-text">
-                    <p>We provide your teh best hair barbing experience, with our neat and sterilized barbing equipments
-                        orderly barber shop and well educated baribing staffs </p>
+                    <p>{{user_profile.bio}}</p>
                 </div>
             </div>
 
             <div class="profiles-desc">
                 <div class="profiles-icon"><i class="fas fa-briefcase fa-1x"></i></div>
                 <div class="profiles-text">
-                    <p>Legal Practioner </p>
+                    <p>{{user_profile.occupation}} </p>
                 </div>
             </div>
             <div class="profiles-desc">
                 <div class="profiles-icon"><i class="fas fa-map-marker fa-1x"></i></div>
                 <div class="profiles-text">
-                    <p>No. 34 Bakori road, Wuse 2 Abuja </p>
+                    <p>{{user_profile.location}}</p>
                 </div>
             </div>
             <div class="profiles-desc">
                 <div class="profiles-icon"><i class="fas fa-home fa-1x"></i></div>
                 <div class="profiles-text">
-                    <p>Abugh House</p>
+                    <p>{{user_profile.house}}</p>
                 </div>
             </div>
             <div class="profiles-desc">
                 <div class="profiles-icon"><i class="fas fa-mortar-board fa-1x"></i></div>
                 <div class="profiles-text">
-                    <p>Set 2020</p>
+                    <p>{{user_profile.gradset}}</p>
                 </div>
             </div>            
             <div class="profiles-desc">
                 <div class="profiles-icon"><i class="fas fa-phone fa-1x"></i></div>
                 <div class="profiles-text">
-                    <p>080-23455678 </p>
+                    <p>{{user_profile.phone}}</p>
                 </div>
             </div>           
             <div class="profiles-desc">
                 <div class="profiles-icon"><i class="fas fa-envelope-open fa-1x"></i></div>
                 <div class="profiles-text">
-                    <p>emailsample@gmail.com </p>
+                    <p>{{user_profile.user.email}} </p>
                 </div>          
                 
                 

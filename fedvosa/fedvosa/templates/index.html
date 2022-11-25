@@ -172,13 +172,15 @@
                                 </div>
                                 <button class="action_view">View</button>
                             </div>
+                            {% for suggestion in suggestions_username_profile_list %}
                             <div class="member-row">
                                 <div class="member-info">
-                                    <img src="{% static 'images/assec.png' %}" alt="">
-                                    <span>Nenge Gabriel</span>
+                                    <img src="{{suggestion.profileimg.url}}" alt="">
+                                    <span>{{suggestion.user}}</span>
                                 </div>
-                                <button class="action_view">View</button>
+                                <a href="/profile/{{suggestion.user}}" class="action_view">View</a>
                             </div>
+                            {% endfor %}
                         </div>
                     </div>
                                         
